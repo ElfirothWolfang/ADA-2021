@@ -18,8 +18,8 @@ public class LecturaStreamBinary {
     
     public static String BinToHex(int x) {
         String r = "";
-        if (x > 0 && x <= 16) {
-            if (x >= 1 && x <= 9) {
+        if (x >= 0 && x <= 16) {
+            if (x >= 0 && x <= 9) {
                 r = r + x;
             } else if (x == 10) {
                 r = r + "A";
@@ -47,7 +47,7 @@ public class LecturaStreamBinary {
             while ((byteLeido = is.read()) != -1) {
                 int a = byteLeido % 16;
                 int b = byteLeido / 16;
-                System.out.println(byteLeido);
+                System.out.println(BinToHex(a) + BinToHex(b));
             }
         } catch (FileNotFoundException ex) {
             System.out.println("El fichero no se ha encontrado");
