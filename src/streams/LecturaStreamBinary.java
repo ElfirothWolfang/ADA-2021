@@ -44,10 +44,16 @@ public class LecturaStreamBinary {
         FileInputStream is = null;
         try {
             is = new FileInputStream("Hola.txt");
+            int contador = 0;
             while ((byteLeido = is.read()) != -1) {
                 int a = byteLeido % 16;
                 int b = byteLeido / 16;
-                System.out.println(BinToHex(a) + BinToHex(b));
+                System.out.print(BinToHex(a) + BinToHex(b) + " ");
+                contador++;
+                if (contador >= 10) {
+                   System.out.print("\r\n");
+                   contador = 0;
+                }
             }
         } catch (FileNotFoundException ex) {
             System.out.println("El fichero no se ha encontrado");
