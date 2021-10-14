@@ -40,7 +40,7 @@ public class LecturaStreamBinary {
 
     public static void main(String args[]) throws FileNotFoundException {
 
-        int byteLeido = 0;
+        int byteLeido;
         FileInputStream is = null;
         try {
             is = new FileInputStream("Hola.txt");
